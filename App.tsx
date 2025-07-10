@@ -100,7 +100,7 @@ const App: React.FC = () => {
   const mainBgClass = theme === 'dark' ? 'bg-slate-950 text-slate-200' : 'bg-white text-slate-800';
 
   return (
-    <div className={`w-full h-fit ${mainBgClass} transition-colors duration-500`}>
+    <div className={`relative w-full h-fit ${mainBgClass} transition-colors duration-500`}>
       <Navbar />
       <CartModal />
       <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
