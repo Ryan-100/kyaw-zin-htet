@@ -1,0 +1,6 @@
+
+{
+  "name": "Developer Portfolio - DevStore",
+  "description": "A personal portfolio reimagined as an e-commerce store. Features interactive 'love' counts for skills and an 'add to cart' feature for projects, all powered by a Supabase backend. This dynamic portfolio showcases frontend and full-stack capabilities.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #854CE6;
+  --primary-color-hover: #6e3ebd;
+  --skeleton-light: #e2e8f0;
+  --skeleton-dark: #334155;
+  --skeleton-bg-animate: #f1f5f9;
+}
+html.dark {
+  --skeleton-bg-animate: #1e293b;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* light */
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #020617; /* dark */
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: var(--skeleton-light);
+  }
+  100% {
+    background-color: var(--skeleton-bg-animate);
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 0.25rem;
+} 
+
+.bg-primary-10 {
+  background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+}
+
+.bg-primary-20 {
+  background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.bg-primary-70 {
+  background-color: color-mix(in srgb, var(--primary-color) 70%, transparent);
+}
