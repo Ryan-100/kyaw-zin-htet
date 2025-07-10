@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CartProvider } from './contexts/CartContext';
+import RocketScrollButton from './components/shared/RocketScrollButton';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -16,6 +17,7 @@ root.render(
     <ThemeProvider>
       <CartProvider>
         <App />
+        <RocketScrollButton/>
       </CartProvider>
     </ThemeProvider>
   </React.StrictMode>

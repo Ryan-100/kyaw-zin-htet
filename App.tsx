@@ -11,8 +11,6 @@ import { useTheme } from './contexts/ThemeContext';
 import { supabase, isSupabaseConfigured } from './lib/supabase';
 import type { BioData, Skill, Experience as ExperienceType, Project, Education as EducationType } from './types';
 import { Bio, staticSkills, experiences as staticExperiences, projects as staticProjects, education as staticEducation } from './data';
-import RocketScrollButton from './components/shared/RocketScrollButton';
-
 
 interface PortfolioData {
   bio: BioData | null;
@@ -100,7 +98,7 @@ const App: React.FC = () => {
   const mainBgClass = theme === 'dark' ? 'bg-slate-950 text-slate-200' : 'bg-white text-slate-800';
 
   return (
-    <div className={`relative w-full h-fit ${mainBgClass} transition-colors duration-500`}>
+    <div className={`w-full ${mainBgClass} transition-colors duration-500`}>
       <Navbar />
       <CartModal />
       <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +125,6 @@ const App: React.FC = () => {
         </div>
       </main>
       <Footer bio={data.bio} />
-      <RocketScrollButton/>
     </div>
   );
 };

@@ -198,7 +198,6 @@ const RocketScrollButton = () => {
     // Calculate actual scroll metrics
     const scrollHeight = document.documentElement.scrollHeight
     const viewportHeight = window.innerHeight
-    const currentScroll = window.scrollY
     const maxScroll = scrollHeight - viewportHeight
         
     // Only animate if there's significant scroll distance
@@ -208,28 +207,7 @@ const RocketScrollButton = () => {
     }
     
     setIsAnimating(true)
-
-    // Calculate animation duration - 1.2x FASTER but still responsive to content
-    const scrollRatio = maxScroll / viewportHeight
-    const baseScrollDuration = Math.max(3, Math.min(6, scrollRatio * 1.5)) // Shorter base duration
-    const scrollDuration = baseScrollDuration / 1.2 // Make it 1.2x faster
-    
-    // Scroll animation - synchronized with rocket trajectory
-    const scrollTl = gsap.timeline({
-      onComplete: () => {
-        window.scrollTo(0, 0)
-      }
-    })
-    
-    scrollTl.to({}, {
-      duration: scrollDuration,
-      onUpdate: () => {
-        const progress = scrollTl.progress()
-        const newY = currentScroll * (1 - progress)
-        window.scrollTo(0, newY)
-      },
-      ease: 'power2.inOut' // Changed to inOut for smoother scroll completion
-    })
+    window.scrollTo(0, 0)
   }
 
   const handleAnimationComplete = () => {
