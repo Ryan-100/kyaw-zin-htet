@@ -100,37 +100,35 @@ const App: React.FC = () => {
   const mainBgClass = theme === 'dark' ? 'bg-slate-950 text-slate-200' : 'bg-white text-slate-800';
 
   return (
-    <>
-      <div className={`w-full h-fit ${mainBgClass} transition-colors duration-500`}>
-        <Navbar />
-        <CartModal />
-        <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {error && (
-            <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 my-4 rounded-md" role="alert">
-              <p className="font-bold">Connection Error</p>
-              <p>{error}</p>
-            </div>
-          )}
-          <div id="about">
-            <Hero bio={data.bio} loading={loading} />
+    <div className={`w-full h-fit ${mainBgClass} transition-colors duration-500`}>
+      <Navbar />
+      <CartModal />
+      <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {error && (
+          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 my-4 rounded-md" role="alert">
+            <p className="font-bold">Connection Error</p>
+            <p>{error}</p>
           </div>
-          <div id="skills" className="pt-24">
-            <Skills skills={data.skills} loading={loading} />
-          </div>
-          <div id="experience" className="pt-24">
-            <Experience experiences={data.experiences} loading={loading} />
-          </div>
-          <div id="projects" className="pt-24">
-            <Projects projects={data.projects} loading={loading} />
-          </div>
-          <div id="education" className="pt-24">
-            <Education education={data.education} loading={loading} />
-          </div>
-        </main>
-        <Footer bio={data.bio} />
-      </div>
+        )}
+        <div id="about">
+          <Hero bio={data.bio} loading={loading} />
+        </div>
+        <div id="skills" className="pt-24">
+          <Skills skills={data.skills} loading={loading} />
+        </div>
+        <div id="experience" className="pt-24">
+          <Experience experiences={data.experiences} loading={loading} />
+        </div>
+        <div id="projects" className="pt-24">
+          <Projects projects={data.projects} loading={loading} />
+        </div>
+        <div id="education" className="pt-24">
+          <Education education={data.education} loading={loading} />
+        </div>
+      </main>
+      <Footer bio={data.bio} />
       <RocketScrollButton/>
-    </>
+    </div>
   );
 };
 
